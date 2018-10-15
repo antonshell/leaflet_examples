@@ -4,6 +4,10 @@ namespace src;
 
 use SimpleXMLElement;
 
+/**
+ * Class GpxBounds
+ * @package src
+ */
 class GpxBounds{
 
     /**
@@ -40,9 +44,12 @@ class GpxBounds{
         return $bounds;
     }
 
+    /**
+     * @param $gpxArray
+     * @return array
+     */
     public function getLatLngBoundsArray($gpxArray)
     {
-        //$bounds = [];
         $latArray = [];
         $lonArray = [];
 
