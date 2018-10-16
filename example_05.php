@@ -29,4 +29,4 @@ $gpxArray = [
 $gpxContent = $combineService->combineGpxArray($gpxArray);
 file_put_contents(__DIR__ . '/output/combined.gpx', $gpxContent);
 
-echo "Job is done";
+echo "Job is done\n";
