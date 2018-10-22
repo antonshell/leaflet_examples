@@ -24,6 +24,12 @@ class GeoJson{
 
         $parsedGpx = $this->parseGpx($gpx);
         $trkSegments = $parsedGpx['trk']['trkseg'];
+
+        // alternative structure
+        if(isset($trkSegments['trkpt'])){
+            $trkSegments = [$trkSegments];
+        }
+
         foreach ($trkSegments as $segmentKey => $segment){
             $coordTimes[$segmentKey] = [];
             $coordinates[$segmentKey] = [];
@@ -34,10 +40,10 @@ class GeoJson{
 
             $trackPoints = $segment['trkpt'];
             foreach ($trackPoints as $trackPointKey => $trackPoint){
-                $elevation = $trackPoint['ele'];
+                $elevation = $trackPoint['ele'] ?? '';
                 $lat = $trackPoint['@attributes']['lat'];
                 $lon = $trackPoint['@attributes']['lon'];
-                $time = $trackPoint['time'];
+                $time = $trackPoint['time'] ?? '';
 
                 if($reduceCoordinate){
                     $lat = $this->reduceCoordinate($lat);
