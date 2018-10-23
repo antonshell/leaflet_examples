@@ -52,6 +52,7 @@
 
     function createMap(elementId){
         var geoJsonUrl = 'output/full.php?file=poland-2018/full.geoJson.gz';
+        var trackPointsUrl = 'output/full.php?file=poland-2018/trackPoints.json.gz';
 
         var neLat = '53.564991094172001';
         var neLng = '19.393472895026207';
@@ -69,18 +70,40 @@
         var bounds = new L.LatLngBounds(new L.LatLng(neLat, neLng), new L.LatLng(swLat, swLng));
         map.addLayer(service).fitBounds(bounds);
 
+        // elevation
         var el = L.control.elevation({
             width: 400,
             height: 125
         });
         el.addTo(map);
 
+        // geoJson track
         $.ajax({
             url: geoJsonUrl,
             success: function(geojson) {
                 var gjl = L.geoJson(geojson,{
                     onEachFeature: el.addData.bind(el)
                 }).addTo(map);
+            }
+        });
+
+        // track points
+        $.ajax({
+            url: trackPointsUrl,
+            success: function(trackPoints) {
+                var points = trackPoints['points'];
+                for(var index in points){
+                    if(points.hasOwnProperty(index)){
+                        var point = points[index];
+
+                        var lat = point['lat'];
+                        var lon = point['lon'];
+                        var name = point['name'];
+
+                        var marker1 = L.marker([lat, lon]).addTo(map);
+                        marker1.bindPopup(name);
+                    }
+                }
             }
         });
     }

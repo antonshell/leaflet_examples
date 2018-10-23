@@ -7,19 +7,31 @@ namespace src;
  * @package src
  */
 class TrackPoints{
-
     /**
      * @param $gpx
      * @return array
      */
     public function parseGpxTrackPoints($gpx){
         $parsedGpx = $this->parseGpx($gpx);
+        $data = ['bounds' => [], 'points' => []];
 
+        if(isset($parsedGpx['metadata']['bounds']['@attributes'])){
+            $data['bounds'] = $parsedGpx['metadata']['bounds']['@attributes'];
+        }
 
-        $a = 0;
+        $points = [];
+        foreach ($parsedGpx['wpt'] as $item){
+            $points[] = [
+                'lat' => $item['@attributes']['lat'],
+                'lon' => $item['@attributes']['lon'],
+                'elevation' => $item['ele'] ?? '',
+                'time' => $item['time'] ?? '',
+                'name' => $item['name'] ?? 'No name',
+            ];
+        }
 
-        $trackPoints = [];
-        return $trackPoints;
+        $data['points'] = $points;
+        return $data;
     }
 
     /**

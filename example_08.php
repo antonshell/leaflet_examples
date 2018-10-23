@@ -27,7 +27,9 @@ file_put_contents($dirPath . '/full.geoJson.gz', $geoJsonGz);
 $gpx = __DIR__ . '/gpx/poland-2018/points.gpx';
 $trackPoints = $trackpointsService->parseGpxTrackPoints($gpx);
 $trackPoints = json_encode($trackPoints, JSON_UNESCAPED_UNICODE);
+$trackPointsGz = gzencode($trackPoints);
 
 file_put_contents($dirPath . '/trackPoints.json', $trackPoints);
+file_put_contents($dirPath . '/trackPoints.json.gz', $trackPointsGz);
 
 echo "Job is done\n";
