@@ -69,10 +69,18 @@
         var bounds = new L.LatLngBounds(new L.LatLng(neLat, neLng), new L.LatLng(swLat, swLng));
         map.addLayer(service).fitBounds(bounds);
 
+        var el = L.control.elevation({
+            width: 400,
+            height: 125
+        });
+        el.addTo(map);
+
         $.ajax({
             url: geoJsonUrl,
             success: function(geojson) {
-                var gjl = L.geoJson(geojson).addTo(map);
+                var gjl = L.geoJson(geojson,{
+                    onEachFeature: el.addData.bind(el)
+                }).addTo(map);
             }
         });
     }

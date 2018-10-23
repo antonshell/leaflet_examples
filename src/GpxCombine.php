@@ -2,8 +2,6 @@
 
 namespace src;
 
-use SimpleXMLElement;
-
 /**
  * Class GpxCombine
  * @package src
