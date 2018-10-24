@@ -41,6 +41,8 @@ class GeoJson{
             $trackPoints = $segment['trkpt'];
             foreach ($trackPoints as $trackPointKey => $trackPoint){
                 $elevation = $trackPoint['ele'] ?? '';
+                $elevation = (string)intval($elevation);
+
                 $lat = $trackPoint['@attributes']['lat'];
                 $lon = $trackPoint['@attributes']['lon'];
                 $time = $trackPoint['time'] ?? '';

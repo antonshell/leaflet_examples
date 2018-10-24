@@ -15,11 +15,6 @@ class GpxBounds{
      * @return array
      */
     public function getLatLngBounds($gpx){
-        /*$content = file_get_contents($gpx);
-
-        $parser = xml_parser_create();
-        xml_parse_into_struct($parser,$content,$parsedGpx);*/
-
         $latArray = [];
         $lonArray = [];
 
@@ -54,16 +49,6 @@ class GpxBounds{
         $lonArray = [];
 
         foreach ($gpxArray as $gpx){
-            //$itemBounds = $this->getLatLngBounds($gpx);
-
-            /*$content = file_get_contents($gpx);
-
-            $parser = xml_parser_create();
-            xml_parse_into_struct($parser,$content,$parsedGpx);*/
-
-            //$latArray = [];
-            //$lonArray = [];
-
             $parsedGpx = $this->parseGpx($gpx);
             foreach($parsedGpx as $line){
                 if(isset($line['attributes']['LAT'])){

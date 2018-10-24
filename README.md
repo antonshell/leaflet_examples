@@ -59,8 +59,6 @@ Array
 
 4 . Get bounds for multiple GPX tracks.
 
-
-
 ```
 php example_04.php
 ```
