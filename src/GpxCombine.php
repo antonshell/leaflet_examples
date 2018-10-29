@@ -22,6 +22,11 @@ class GpxCombine{
             }
         }
 
+        // alternative structure
+        if(isset($trkSegments['trkpt'])){
+            $trkSegments = [$trkSegments];
+        }
+
         $content = '';
         foreach ($trkSegments as $i1 => $trkSegment){
             $segmentContent = '';

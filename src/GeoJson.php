@@ -23,6 +23,17 @@ class GeoJson{
         $coordTimes = [];
 
         $parsedGpx = $this->parseGpx($gpx);
+
+        // alternative structure
+        if(!isset($parsedGpx['trk']['trkseg']) && isset($parsedGpx['trk'][0]['trkseg']['trkpt'])){
+            $parsedGpx['trk']['trkseg'] = [];
+            foreach ($parsedGpx['trk'] as $trk){
+                if(isset($trk['trkseg'])){
+                    $parsedGpx['trk']['trkseg'][] = $trk['trkseg'];
+                }
+            }
+        }
+
         $trkSegments = $parsedGpx['trk']['trkseg'];
 
         // alternative structure
