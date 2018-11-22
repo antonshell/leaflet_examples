@@ -3,6 +3,8 @@
 Examples of usage Leaflet library. Based on http://velocrunch.ru project.
 Related post: http://antonshell.me/post/leaflet-examples-part1
 
+Live demo: http://demo.antonshell.me/leaflet_examples/
+
 **Main features:** Implemented examples for map rendering, gpx tracks, 
 performance optimization for large gpx files, markers rendering, track points rendering.
 
