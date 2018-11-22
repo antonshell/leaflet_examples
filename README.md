@@ -1,5 +1,9 @@
 # Leaflet Examples
 
+<p align="center">
+    <img src="http://demo.antonshell.me/images/leaflet-example.jpg" alt="leaflet-example" />
+</p>
+
 Examples of usage Leaflet library. Based on http://velocrunch.ru project.
 Related post: http://antonshell.me/post/leaflet-examples-part1
 
