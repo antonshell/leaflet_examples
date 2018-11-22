@@ -21,7 +21,13 @@ https://github.com/Leaflet/Leaflet
 git clone https://github.com/antonshell/leaflet_examples.git
 ```
 
-2 . Open in browser
+2 . Install dependencies
+
+```
+npm install
+```
+
+3 . Open in browser
 
 ```
 http://127.0.0.1/leaflet_examples/
