@@ -27,7 +27,15 @@ git clone https://github.com/antonshell/leaflet_examples.git
 npm install
 ```
 
-3 . Open in browser
+3 . Prepare geojson
+
+```
+php example_05.php
+php example_07.php
+php example_08.php
+```
+
+4 . Open in browser
 
 ```
 http://127.0.0.1/leaflet_examples/
