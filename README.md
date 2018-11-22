@@ -18,7 +18,7 @@ https://github.com/Leaflet/Leaflet
 1 . Clone repository
 
 ```
-git clone ...
+git clone https://github.com/antonshell/leaflet_examples.git
 ```
 
 2 . Open in browser

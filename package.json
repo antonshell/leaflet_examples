@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
     "@mapbox/togeojson": "^0.16.0",
     "d3": "^5.7.0",
     "jquery": "^3.3.1",

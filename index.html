@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaflet Examples</title>
+
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <style>
+        .example-block{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Leaflet Examples</h1>
+
+        <iframe src="example_01.html" width="100%" height="400px">
+
+        </iframe>
+
+        <br><br>
+
+        <p>
+            Examples of usage Leaflet library. Based on <a href="http://velocrunch.ru">http://velocrunch.ru</a> project.
+            Related post:
+        </p>
+
+        <p>
+            <strong>Main features:</strong> Implemented examples for map rendering, gpx tracks,
+            performance optimization for large gpx files, markers rendering, track points rendering.
+        </p>
+
+        <p>
+            <strong>Extra features:</strong> combine(concatenate) gpx tracks, get bounds from gpx,
+            convert gpx to geojson format. Convert Garmin gpx track points to json array.
+        </p>
+    </div>
+
+    <div class="row">
+        <h2>Examples</h2>
+    </div>
+
+    <div class="row example-block">
+        <h4>Map + Single GPX tracks</h4>
+
+        Demo: <a href="example_01.html" target="_blank">example_01.html</a>
+    </div>
+    <div class="row example-block">
+        <h4>Map + multiple GPX tracks(simple)</h4>
+
+        Demo: <a href="example_02.html" target="_blank">example_02.html</a>
+    </div>
+    <div class="row example-block">
+        <h4>Get bounds for GPX tracks</h4>
+
+        <code>
+            php example_03.php
+        </code>
+
+        <br>
+
+        <pre>
+        Array
+        (
+        [neLat] => 36.79923084564507
+        [neLng] => 21.265787724405527
+        [swLat] => 38.496870584785938
+        [swLng] => 24.058144837617874
+        )
+        </pre>
+    </div>
+    <div class="row example-block">
+        <h4>Get bounds for multiple GPX tracks.</h4>
+
+        <code>
+            php example_04.php
+        </code>
+
+        <br>
+
+        <pre>
+        Array
+        (
+        [0] => /Users/antonshell/Projects/leaflet_examples/gpx/austria-2016/full.gpx
+        [1] => /Users/antonshell/Projects/leaflet_examples/gpx/greece-2018/full.gpx
+        [2] => /Users/antonshell/Projects/leaflet_examples/gpx/italy-coast-to-coast-2017/full.gpx
+        [3] => /Users/antonshell/Projects/leaflet_examples/gpx/italy-dolomity-2017/full-2016.gpx
+        [4] => /Users/antonshell/Projects/leaflet_examples/gpx/italy-dolomity-2017/full-2017.gpx
+        [5] => /Users/antonshell/Projects/leaflet_examples/gpx/italy-dolomity-2017/laguna.gpx
+        [6] => /Users/antonshell/Projects/leaflet_examples/gpx/sardegna-2017/full.gpx
+        )
+        Array
+        (
+        [neLat] => 36.79923084564507
+        [neLng] => 8.3107243851
+        [swLat] => 47.807752154767513
+        [swLng] => 24.058144837617874
+        )
+        </pre>
+    </div>
+    <div class="row example-block">
+        <h4>Combine GPX tracks</h4>
+
+        <code>
+            php example_05.php
+        </code>
+
+        <br>
+
+        Demo: <a href="example_05.html" target="_blank">example_05.html</a>
+    </div>
+    <div class="row example-block">
+        <h4>Markers</h4>
+
+        Demo: <a href="example_06.html" target="_blank">example_06.html</a>
+    </div>
+    <div class="row example-block">
+        <h4>Map + multiple GPX tracks(optimized)</h4>
+
+        <code>
+            php example_07.php
+        </code>
+
+        <br>
+
+        Demo: <a href="example_07.html" target="_blank">example_07.html</a>
+    </div>
+    <div class="row example-block">
+        <h4>Track Points(Garmin)</h4>
+
+        <code>
+            php example_08.php
+        </code>
+
+        <br>
+
+        Demo: <a href="example_08.html" target="_blank">example_08.html</a>
+    </div>
+</div>
+</body>
+</html>
